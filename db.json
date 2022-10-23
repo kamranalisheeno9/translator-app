@@ -1,0 +1,9 @@
+{
+  "annotations": [
+      {
+      "start": 0,
+      "end": 7,
+      "label": "DRUG/DEVICE"
+      }
+    ]
+}
