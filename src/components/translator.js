@@ -6,6 +6,8 @@ import "./translator.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Button from "react-bootstrap/Button";
 
+// JSON API Call 
+
 const API = " http://localhost:8000/annotations";
 
 const Translator = () => {
@@ -13,8 +15,10 @@ const Translator = () => {
   const [count, setCount] = useState("");
   const [output, setOutput] = useState("");
 
-  useEffect(() => {
-    check();
+// Fetching Data
+
+useEffect(() => {
+    getOutput();
     fetch(API)
       .then(async (res) => {
         return await res.json();
@@ -23,9 +27,13 @@ const Translator = () => {
         setData(db);
       });
   }, []);
-  const check =  () => {
+
+// Setting output call
+
+  const getOutput =  () => {
    setOutput(count);
   };
+  
   return (
     <Container fluid>
       <Row className="justify-content-between main-box">
@@ -73,7 +81,7 @@ const Translator = () => {
             </Container>
           </Container>
         </Col>
-        <Button className="translate-btn" onClick={() => check()}>
+        <Button className="translate-btn" onClick={() => getOutput()}>
           Translate
         </Button>
       </Row>
