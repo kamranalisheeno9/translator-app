@@ -32,16 +32,18 @@ useEffect(() => {
 
   const getOutput =  () => {
    setOutput(count);
+   console.log(output)
+  //  console.log(count)
   };
   
   return (
-    <Container fluid>
-      <Row className="justify-content-between main-box">
-        <Col md={6} className="input-box">
+    <Container fluid className="main-box">
+      <Row className="justify-content-around row-comp ">
+        <Col sm={6} md={5} xl={4} className="input-box">
           <Container fluid className="input-div">
             <h4>
               {" "}
-              Input
+              Process Input
              
             </h4>
             <textarea
@@ -52,9 +54,9 @@ useEffect(() => {
             />
           </Container>
         </Col>
-        <Col md={6} className="translated-box">
+        <Col sm={6} md={5} xl={4} className="translated-box">
           <Container fluid className="input-div">
-            <h4>Translate</h4>
+            <h4>Processed</h4>
             <Container className="full_height_Width output-normal">
               {data.map((val, id) => {
                 const WordsAdded = output.slice(val.start, val.end + 1);
@@ -81,10 +83,10 @@ useEffect(() => {
             </Container>
           </Container>
         </Col>
+      </Row>
         <Button className="translate-btn" onClick={() => getOutput()}>
           Translate
         </Button>
-      </Row>
     </Container>
   );
 };
