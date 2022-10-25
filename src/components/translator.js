@@ -37,8 +37,13 @@ useEffect(() => {
   };
   
   return (
+    // Main Container
+
     <Container fluid className="main-box">
-      <Row className="justify-content-around row-comp ">
+
+    {/* Input and Output Div Start */}
+
+      <Row className="justify-content-center row-comp ">
         <Col sm={6} md={5} xl={4} className="input-box">
           <Container fluid className="input-div">
             <h4>
@@ -46,6 +51,9 @@ useEffect(() => {
               Process Input
              
             </h4>
+
+            {/* Textarea as in process input */}
+            
             <textarea
               type="text"
               className="full_height_Width"
@@ -55,9 +63,16 @@ useEffect(() => {
           </Container>
         </Col>
         <Col sm={6} md={5} xl={4} className="translated-box">
+
           <Container fluid className="input-div">
             <h4>Processed</h4>
+
+          {/* Output Container */}
+
             <Container className="full_height_Width output-normal">
+          
+              {/* Mapping of data from API and applying condition to filter word that matches character of start and end. */}
+          
               {data.map((val, id) => {
                 const WordsAdded = output.slice(val.start, val.end + 1);
                 return (
@@ -84,8 +99,11 @@ useEffect(() => {
           </Container>
         </Col>
       </Row>
+
+    {/* Input and Output Div End */}
+
         <Button className="translate-btn" onClick={() => getOutput()}>
-          Translate
+          Process
         </Button>
     </Container>
   );

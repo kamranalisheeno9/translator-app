@@ -3,6 +3,8 @@
     font-family: 'Roboto Condensed', sans-serif !important; 
     display: flex;
     flex-direction: column;
+  font-family: Arial !important;
+
 }
 
 .input-box{
